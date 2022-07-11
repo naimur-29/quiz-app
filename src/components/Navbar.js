@@ -18,7 +18,7 @@ const Navbar = () => {
             Simply Quiz
           </NavLink>
           <div
-            className="mobile-toggle"
+            className={`mobile-toggle${mobileMenu ? " active" : ""}`}
             onClick={() => setMobileMenu(mobileMenu ? false : true)}
           >
             <div className="line"></div>

@@ -10,17 +10,17 @@ const QuizPage = ({ quizName, questions, setQuizSubmitted }) => {
           <h3 className="question">{item.question}</h3>
 
           <ul className="option-container">
-            {item.options.map((option, index) => (
-              <li key={index} className="options">
+            {item.options.map((option, i) => (
+              <li key={i} className="options">
                 <input
                   type="radio"
-                  name={item.question}
-                  id={index}
+                  name={item.question + index}
+                  id={option + i + index}
                   onClick={() => {
-                    item.userAnswer = index + 1;
+                    item.userAnswer = i + 1;
                   }}
                 />
-                <label htmlFor={index}>{option}</label>
+                <label htmlFor={option + i + index}>{option}</label>
               </li>
             ))}
           </ul>
