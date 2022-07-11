@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, Outlet, Link, Navigate } from "react-router-dom";
 
 import "./App.css";
 
@@ -13,41 +13,88 @@ import Settings from "./components/Settings";
 const App = () => {
   const [questions, setQuestions] = useState([]);
   const [quizName, setQuizName] = useState("");
+  const [questionSubmit, setQuestionSubmit] = useState(false);
+  const [quizSubmitted, setQuizSubmitted] = useState(false);
 
   return (
-    <div>
-      <Navbar />
-      <div className="page-container">
-        <Routes>
-          <Route
-            path="/"
-            element={
-              <Home setQuestions={setQuestions} setQuizName={setQuizName} />
-            }
-          />
-          <Route
-            path="/add+questions"
-            element={
-              <AddQuestions
-                questions={questions}
-                setQuestions={setQuestions}
+    <Routes>
+      <Route
+        path="/"
+        element={
+          <div>
+            <Navbar />
+            <div className="page-container">
+              <Outlet />
+            </div>
+          </div>
+        }
+      >
+        <Route
+          index
+          element={
+            <Home
+              setQuestions={setQuestions}
+              setQuizName={setQuizName}
+              setQuestionSubmit={setQuestionSubmit}
+              setQuizSubmitted={setQuizSubmitted}
+            />
+          }
+        />
+
+        <Route
+          path="/add+questions"
+          element={
+            <AddQuestions
+              questions={questions}
+              setQuestions={setQuestions}
+              quizName={quizName}
+              setQuizName={setQuizName}
+              setQuestionSubmit={setQuestionSubmit}
+            />
+          }
+        />
+
+        <Route
+          path="/quiz+page"
+          element={
+            questionSubmit ? (
+              <QuizPage
                 quizName={quizName}
-                setQuizName={setQuizName}
+                questions={questions}
+                setQuizSubmitted={setQuizSubmitted}
               />
-            }
-          />
-          <Route
-            path="/quiz+page"
-            element={<QuizPage quizName={quizName} questions={questions} />}
-          />
-          <Route
-            path="/quiz+result"
-            element={<QuizResult questions={questions} />}
-          />
-          <Route path="/settings" element={<Settings />} />
-        </Routes>
-      </div>
-    </div>
+            ) : (
+              <Navigate to="/" />
+            )
+          }
+        />
+
+        <Route
+          path="/quiz+result"
+          element={
+            quizSubmitted ? (
+              <QuizResult questions={questions} />
+            ) : (
+              <Navigate to="/" />
+            )
+          }
+        />
+
+        <Route path="/settings" element={<Settings />} />
+
+        <Route
+          path="*"
+          element={
+            <div className="error-container">
+              <h1 className="error">404 Not Found</h1>
+              <Link to="/" className="return-home">
+                Back to home
+              </Link>
+            </div>
+          }
+        />
+      </Route>
+    </Routes>
   );
 };
 

@@ -1,7 +1,13 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
-const AddQuestions = ({ questions, setQuestions, quizName, setQuizName }) => {
+const AddQuestions = ({
+  questions,
+  setQuestions,
+  quizName,
+  setQuizName,
+  setQuestionSubmit,
+}) => {
   const [question, setQuestion] = useState("");
   const [option1, setOption1] = useState("");
   const [option2, setOption2] = useState("");
@@ -12,7 +18,7 @@ const AddQuestions = ({ questions, setQuestions, quizName, setQuizName }) => {
   const newQuestion = {
     question: question,
     options: [option1, option2, option3, option4],
-    correctAnswer: correctAnswer,
+    correctAnswer: Number(correctAnswer),
     userAnswer: null,
   };
 
@@ -106,12 +112,7 @@ const AddQuestions = ({ questions, setQuestions, quizName, setQuizName }) => {
 
         <div className="proceed-buttons">
           {questions.length !== 0 && quizName && (
-            <button
-              className="start"
-              onClick={() => {
-                questions && console.log(questions);
-              }}
-            >
+            <button className="start" onClick={() => setQuestionSubmit(true)}>
               <Link to="/quiz+page">Start Quiz</Link>
             </button>
           )}
@@ -121,9 +122,10 @@ const AddQuestions = ({ questions, setQuestions, quizName, setQuizName }) => {
             onClick={() => {
               newQuestion?.question &&
               newQuestion?.options &&
-              newQuestion?.correctAnswer
+              newQuestion?.correctAnswer > 0 &&
+              newQuestion?.correctAnswer < 5
                 ? handleAddQuestions()
-                : alert("hello");
+                : alert("Please fill out all the information properly!!");
             }}
           >
             Add Question

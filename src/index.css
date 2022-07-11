@@ -1,6 +1,7 @@
 :root {
-  --nav-text-color: #232323;
-  --nav-bg-color: lightseagreen;
+  --nav-text-color: #fff;
+  --nav-bg-color: #121212;
+  --text-color: #232323;
   --shadow-color: rgba(0, 0, 0, 0.15);
 }
 

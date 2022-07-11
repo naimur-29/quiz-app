@@ -3,11 +3,18 @@ import { Link } from "react-router-dom";
 
 import "./Home.css";
 
-const Home = ({ setQuestions, setQuizName }) => {
+const Home = ({
+  setQuestions,
+  setQuizName,
+  setQuestionSubmit,
+  setQuizSubmitted,
+}) => {
   useEffect(() => {
     setQuestions([]);
     setQuizName("");
-  }, []);
+    setQuestionSubmit(false);
+    setQuizSubmitted(false);
+  }, [setQuestions, setQuizName, setQuestionSubmit, setQuizSubmitted]);
 
   return (
     <div className="home-page-container">

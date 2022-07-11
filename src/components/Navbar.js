@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 import "./Navbar.css";
 
@@ -10,13 +10,13 @@ const Navbar = () => {
     <div>
       <nav className="navbar">
         <div className="title-container">
-          <Link
+          <NavLink
             to="/"
             className="main-title"
             onClick={() => setMobileMenu(false)}
           >
             Simply Quiz
-          </Link>
+          </NavLink>
           <div
             className="mobile-toggle"
             onClick={() => setMobileMenu(mobileMenu ? false : true)}
@@ -32,31 +32,56 @@ const Navbar = () => {
             className="nav-items"
             onClick={() => setMobileMenu(mobileMenu ? false : true)}
           >
-            <Link to="/">Home</Link>
+            <NavLink
+              to="/"
+              className={`${({ isActive }) => isActive && "active"}>`}
+            >
+              Home
+            </NavLink>
           </li>
           <li
             className="nav-items"
             onClick={() => setMobileMenu(mobileMenu ? false : true)}
           >
-            <Link to="/add+questions">Add Questions</Link>
+            <NavLink
+              to="/add+questions"
+              className={`${({ isActive }) => isActive && "active"}`}
+            >
+              Add Questions
+            </NavLink>
           </li>
           <li
             className="nav-items"
             onClick={() => setMobileMenu(mobileMenu ? false : true)}
           >
-            <Link to="/quiz+page">Quiz Page</Link>
+            <NavLink
+              to="/quiz+page"
+              className={`${({ isActive }) => isActive && "active"}`}
+            >
+              Quiz Page
+            </NavLink>
           </li>
           <li
             className="nav-items"
             onClick={() => setMobileMenu(mobileMenu ? false : true)}
           >
-            <Link to="/quiz+result">Quiz Result</Link>
+            <NavLink
+              to="/quiz+result"
+              className={`${({ isActive }) => isActive && "active"}`}
+            >
+              Quiz Result
+            </NavLink>
           </li>
           <li
             className="nav-items"
             onClick={() => setMobileMenu(mobileMenu ? false : true)}
           >
-            <Link to="/settings">Settings</Link>
+            <NavLink
+              to="/settings"
+              className={`${({ isActive }) => isActive && "active"}`}
+            >
+              Settings
+            </NavLink>
           </li>
         </ul>
       </nav>

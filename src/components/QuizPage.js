@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const QuizPage = ({ quizName, questions }) => {
+const QuizPage = ({ quizName, questions, setQuizSubmitted }) => {
   return (
     <div>
       <h1>{quizName}</h1>
@@ -18,7 +18,6 @@ const QuizPage = ({ quizName, questions }) => {
                   id={index}
                   onClick={() => {
                     item.userAnswer = index + 1;
-                    console.log(item.userAnswer);
                   }}
                 />
                 <label htmlFor={index}>{option}</label>
@@ -27,9 +26,11 @@ const QuizPage = ({ quizName, questions }) => {
           </ul>
         </div>
       ))}
-      {questions.map((item) => item.userAnswer) && (
+      {questions.map((item) => item.userAnswer !== null) && (
         <button className="submit-answers">
-          <Link to="/quiz+result">Submit</Link>
+          <Link to="/quiz+result" onClick={() => setQuizSubmitted(true)}>
+            Submit
+          </Link>
         </button>
       )}
     </div>
