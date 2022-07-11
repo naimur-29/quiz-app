@@ -14,6 +14,8 @@ const App = () => {
   const [questions, setQuestions] = useState([]);
   const [quizName, setQuizName] = useState("");
 
+  console.log(quizName);
+
   return (
     <div>
       <Navbar />
@@ -30,10 +32,7 @@ const App = () => {
               />
             }
           />
-          <Route
-            path="/quiz+page"
-            element={<QuizPage quizName={quizName} questions={questions} />}
-          />
+          <Route path="/quiz+page" element={<QuizPage />} />
           <Route path="/quiz+result" element={<QuizResult />} />
           <Route path="/settings" element={<Settings />} />
         </Routes>

@@ -3,15 +3,14 @@ import { Link } from "react-router-dom";
 
 const AddQuestions = ({ questions, setQuestions, setQuizName }) => {
   const [question, setQuestion] = useState("");
-  const [option1, setOption1] = useState([]);
-  const [option2, setOption2] = useState([]);
-  const [option3, setOption3] = useState([]);
-  const [option4, setOption4] = useState([]);
+  const [option1, setOption1] = useState("");
+  const [option2, setOption2] = useState("");
+  const [option3, setOption3] = useState("");
+  const [option4, setOption4] = useState("");
   const [correctAnswer, setCorrectAnswer] = useState("");
 
   const handleAddQuestions = () => {
     setQuestions([
-      ...questions,
       {
         question: question,
         correctAnswer: correctAnswer,
@@ -92,8 +91,11 @@ const AddQuestions = ({ questions, setQuestions, setQuizName }) => {
         </div>
 
         <div className="proceed-buttons">
-          <button className="start" onClick={() => console.log(questions)}>
-            <Link to="/quiz+page">Start Quiz</Link>
+          <button
+            className="start"
+            onClick={() => questions && console.log(questions)}
+          >
+            <Link to="/quiz-page">Start Quiz</Link>
           </button>
           <button className="add-another" onClick={handleAddQuestions}>
             Add Another Question
