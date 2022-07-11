@@ -14,26 +14,36 @@ const App = () => {
   const [questions, setQuestions] = useState([]);
   const [quizName, setQuizName] = useState("");
 
-  console.log(quizName);
-
   return (
     <div>
       <Navbar />
       <div className="page-container">
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route
+            path="/"
+            element={
+              <Home setQuestions={setQuestions} setQuizName={setQuizName} />
+            }
+          />
           <Route
             path="/add+questions"
             element={
               <AddQuestions
                 questions={questions}
                 setQuestions={setQuestions}
+                quizName={quizName}
                 setQuizName={setQuizName}
               />
             }
           />
-          <Route path="/quiz+page" element={<QuizPage />} />
-          <Route path="/quiz+result" element={<QuizResult />} />
+          <Route
+            path="/quiz+page"
+            element={<QuizPage quizName={quizName} questions={questions} />}
+          />
+          <Route
+            path="/quiz+result"
+            element={<QuizResult questions={questions} />}
+          />
           <Route path="/settings" element={<Settings />} />
         </Routes>
       </div>

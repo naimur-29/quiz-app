@@ -1,9 +1,14 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 
 import "./Home.css";
 
-const Home = () => {
+const Home = ({ setQuestions, setQuizName }) => {
+  useEffect(() => {
+    setQuestions([]);
+    setQuizName("");
+  }, []);
+
   return (
     <div className="home-page-container">
       <h1 className="home-title">
