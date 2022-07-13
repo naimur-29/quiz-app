@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
+import "./AddQuestions.css";
+
 const AddQuestions = ({
   questions,
   setQuestions,
@@ -33,10 +35,17 @@ const AddQuestions = ({
   };
 
   return (
-    <div>
+    <div className="add-questions-container">
+      <h1 className="title">Add Your Questions For The Quiz</h1>
+      <h2 className="questions-info">
+        Questions:{" "}
+        {questions.length < 10 ? "0" + questions.length : questions.length}
+      </h2>
       <div className="input-container">
         <div className="input">
-          <label htmlFor="QuizName">Quiz Name: </label>
+          <label name="QuizName" htmlFor="QuizName">
+            Quiz Name
+          </label>
           <textarea
             name="QuizName"
             cols="20"
@@ -47,7 +56,9 @@ const AddQuestions = ({
         </div>
 
         <div className="input">
-          <label htmlFor="Question">Question: </label>
+          <label name="Question" htmlFor="Question">
+            Question
+          </label>
           <textarea
             name="Question"
             cols="20"
@@ -58,7 +69,9 @@ const AddQuestions = ({
         </div>
 
         <div className="input">
-          <label htmlFor="Option1">Option 1: </label>
+          <label name="Option1" htmlFor="Option1">
+            Option 1
+          </label>
           <textarea
             name="Option1"
             cols="20"
@@ -69,7 +82,9 @@ const AddQuestions = ({
         </div>
 
         <div className="input">
-          <label htmlFor="Option2">Option 2: </label>
+          <label name="Option2" htmlFor="Option2">
+            Option 2
+          </label>
           <textarea
             name="Option2"
             cols="20"
@@ -80,7 +95,9 @@ const AddQuestions = ({
         </div>
 
         <div className="input">
-          <label htmlFor="Option3">Option 3: </label>
+          <label name="Option3" htmlFor="Option3">
+            Option 3
+          </label>
           <textarea
             name="Option3"
             cols="20"
@@ -91,7 +108,9 @@ const AddQuestions = ({
         </div>
 
         <div className="input">
-          <label htmlFor="Option4">Option 4: </label>
+          <label name="Option4" htmlFor="Option4">
+            Option 4
+          </label>
           <textarea
             name="Option4"
             cols="20"
@@ -102,38 +121,42 @@ const AddQuestions = ({
         </div>
 
         <div className="input">
-          <label htmlFor="CorrectAnswer">Correct Answer No: </label>
-          <input
-            type="text"
+          <label name="CorrectAnswer" htmlFor="CorrectAnswer">
+            Correct Answer No
+          </label>
+          <textarea
+            name="CorrectAnswer"
+            cols="20"
+            rows="2"
             value={correctAnswer}
             onChange={(event) => setCorrectAnswer(event.target.value)}
-          />
+          ></textarea>
         </div>
-
-        <div className="proceed-buttons">
-          {questions.length !== 0 && quizName && (
-            <button className="start" onClick={() => setQuestionSubmit(true)}>
-              <Link to="/quiz+page">Start Quiz</Link>
-            </button>
-          )}
-
+      </div>
+      <div className="proceed-buttons">
+        {questions.length !== 0 && quizName && (
           <button
-            className="add-another"
-            onClick={() => {
-              newQuestion?.question &&
-              newQuestion?.options &&
-              newQuestion?.correctAnswer > 0 &&
-              newQuestion?.correctAnswer < 5
-                ? handleAddQuestions()
-                : alert("Please fill out all the information properly!!");
-            }}
+            className="start-quiz"
+            onClick={() => setQuestionSubmit(true)}
           >
-            Add Question
+            <Link to="/quiz+page">Start Quiz</Link>
           </button>
-        </div>
-        <h3 className="questions-info">
-          Number of questions: {questions.length}
-        </h3>
+        )}
+
+        <button
+          className="add-question"
+          onClick={() => {
+            newQuestion?.question &&
+            newQuestion?.options &&
+            newQuestion?.correctAnswer > 0 &&
+            newQuestion?.correctAnswer < 5
+              ? handleAddQuestions()
+              : alert("Please fill out all the information properly!!");
+            window.scrollTo(0, 0);
+          }}
+        >
+          Add Question
+        </button>
       </div>
     </div>
   );

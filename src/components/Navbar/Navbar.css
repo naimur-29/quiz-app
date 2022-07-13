@@ -83,7 +83,6 @@
     padding: 0;
     height: auto;
     flex-direction: column;
-    justify-content: center;
   }
 
   .navbar .title-container {
@@ -146,7 +145,7 @@
   }
 
   .navbar .nav-container.active {
-    height: 100%;
+    height: 500%;
     transform: translateX(0);
   }
 }

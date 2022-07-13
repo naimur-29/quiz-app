@@ -3,12 +3,12 @@ import { Route, Routes, Outlet, Link, Navigate } from "react-router-dom";
 
 import "./App.css";
 
-import Navbar from "./components/Navbar";
-import Home from "./components/Home";
-import AddQuestions from "./components/AddQuestions";
-import QuizPage from "./components/QuizPage";
-import QuizResult from "./components/QuizResult";
-import Settings from "./components/Settings";
+import Navbar from "./components/Navbar/Navbar";
+import Home from "./components/pages/Home/Home";
+import AddQuestions from "./components/pages/AddQuestions/AddQuestions";
+import QuizPage from "./components/pages/QuizPage/QuizPage";
+import QuizResult from "./components/pages/QuizResult/QuizResult";
+import Settings from "./components/pages/Settings/Settings";
 
 const App = () => {
   const [questions, setQuestions] = useState([]);
