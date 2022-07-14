@@ -14,9 +14,9 @@ const Error = () => {
         padding: "100px 10px",
       }}
     >
-      <h1 className="error">404 Not Found</h1>
+      <h1 className="error">404 not found</h1>
       <h3 className="error" style={{ fontWeight: "500" }}>
-        Either you didn't add questions or you're in the wrong place...
+        either you didn't add questions or you're in the wrong place...
       </h3>
       <Link
         to="/"
@@ -32,7 +32,7 @@ const Error = () => {
           fontWeight: "600",
         }}
       >
-        Back to home
+        return home
       </Link>
     </div>
   );
