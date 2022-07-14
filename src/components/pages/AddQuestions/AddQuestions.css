@@ -140,4 +140,10 @@
     background-color: initial;
     color: initial;
   }
+
+  .add-questions-container .proceed-buttons .start-quiz:hover button {
+    color: initial;
+
+    transition: all 0.2s ease;
+  }
 }

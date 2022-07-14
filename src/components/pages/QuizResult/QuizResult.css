@@ -7,7 +7,6 @@
   max-width: 450px;
   padding: 20px;
   color: var(--text-color);
-  /* gap: 40px; */
 }
 
 .quiz-result-container .title {
@@ -57,4 +56,20 @@
   color: aliceblue;
 
   transition: all 0.2s ease;
+}
+
+@media (hover: none) {
+  .quiz-result-container .proceed-buttons .quiz-page:hover,
+  .quiz-result-container .proceed-buttons .home:hover {
+    background-color: initial;
+
+    transition: all 0.2s ease;
+  }
+
+  .quiz-result-container .proceed-buttons .quiz-page:hover button,
+  .quiz-result-container .proceed-buttons .home:hover button {
+    color: unset;
+
+    transition: all 0.2s ease;
+  }
 }

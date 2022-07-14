@@ -1,5 +1,4 @@
 .quiz-page-container {
-  /* background-color: lightcoral; */
   width: 90%;
   height: 100%;
   display: flex;
@@ -53,7 +52,6 @@
   .option {
   font-size: 1.1rem;
   font-weight: 400;
-  /* background-color: seagreen; */
 }
 
 .quiz-page-container
@@ -98,7 +96,6 @@
   content: "";
   display: inline-block;
   visibility: visible;
-  /* border: 0px solid #fff; */
 
   transition: all 0.35s ease;
 }
@@ -129,7 +126,6 @@
   content: "";
   display: inline-block;
   visibility: visible;
-  /* border: 2px solid #fff; */
 }
 
 .quiz-page-container .submit-answers {
@@ -162,7 +158,6 @@
   .quiz-page-container {
     max-width: 900px;
     gap: 60px;
-    /* padding: 0; */
   }
 
   .quiz-page-container .title {
