@@ -8,7 +8,7 @@ const AddQuestions = ({
   setQuestions,
   quizName,
   setQuizName,
-  setQuestionSubmit,
+  setIsQuestionSubmitted,
 }) => {
   const [question, setQuestion] = useState("");
   const [option1, setOption1] = useState("");
@@ -135,12 +135,11 @@ const AddQuestions = ({
       </div>
       <div className="proceed-buttons">
         {questions.length !== 0 && quizName && (
-          <button
-            className="start-quiz"
-            onClick={() => setQuestionSubmit(true)}
-          >
-            <Link to="/quiz+page">Start Quiz</Link>
-          </button>
+          <Link to="/quiz+page" className="start-quiz">
+            <button onClick={() => setIsQuestionSubmitted(true)}>
+              Start Quiz
+            </button>
+          </Link>
         )}
 
         <button

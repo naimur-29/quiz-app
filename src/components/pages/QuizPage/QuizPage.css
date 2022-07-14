@@ -1,0 +1,229 @@
+.quiz-page-container {
+  /* background-color: lightcoral; */
+  width: 90%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  color: var(--text-color);
+  padding: 120px 0;
+  line-height: 1.4;
+}
+
+.quiz-page-container .title {
+  text-align: center;
+  font-size: 2.2rem;
+  font-weight: 600;
+}
+
+.quiz-page-container .questions-container {
+  border: 3px solid var(--text-color);
+  border-radius: 6px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 20px;
+  padding: 5%;
+}
+
+.quiz-page-container .questions-container .question-container {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.quiz-page-container .questions-container .question-container .question {
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.quiz-page-container
+  .questions-container
+  .question-container
+  .options-container {
+  list-style-type: none;
+  padding-left: 20px;
+}
+
+.quiz-page-container
+  .questions-container
+  .question-container
+  .options-container
+  .option {
+  font-size: 1.1rem;
+  font-weight: 400;
+  /* background-color: seagreen; */
+}
+
+.quiz-page-container
+  .questions-container
+  .question-container
+  .options-container
+  .option
+  input,
+.quiz-page-container
+  .questions-container
+  .question-container
+  .options-container
+  .option
+  label {
+  cursor: pointer;
+}
+
+.quiz-page-container
+  .questions-container
+  .question-container
+  .options-container
+  .option
+  label {
+  display: inline-block;
+  width: 60vw;
+  max-width: 600px;
+}
+
+.quiz-page-container
+  .questions-container
+  .question-container
+  .options-container
+  .option
+  input[type="radio"]:after {
+  width: 15px;
+  height: 15px;
+  border-radius: 15px;
+  top: -2px;
+  left: -1px;
+  position: relative;
+  background-color: #d1d3d1;
+  content: "";
+  display: inline-block;
+  visibility: visible;
+  /* border: 0px solid #fff; */
+
+  transition: all 0.35s ease;
+}
+
+.quiz-page-container
+  .questions-container
+  .question-container
+  .options-container
+  .option
+  input[type="radio"]:hover:after {
+  background-color: #9e9e9e;
+  transform: scale(1.1);
+}
+
+.quiz-page-container
+  .questions-container
+  .question-container
+  .options-container
+  .option
+  input[type="radio"]:checked:after {
+  width: 15px;
+  height: 15px;
+  border-radius: 15px;
+  top: -2px;
+  left: -1px;
+  position: relative;
+  background-color: var(--nav-bg-color);
+  content: "";
+  display: inline-block;
+  visibility: visible;
+  /* border: 2px solid #fff; */
+}
+
+.quiz-page-container .submit-answers {
+  padding: 10px 0;
+  border-radius: 6px;
+  border: 2px solid #323232;
+  text-align: center;
+
+  transition: all 0.2s ease;
+}
+
+.quiz-page-container .submit-answers:hover {
+  background-color: #323232;
+
+  transition: all 0.2s ease;
+}
+
+.quiz-page-container .submit-answers button {
+  font-size: 1.4rem;
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+}
+
+.quiz-page-container .submit-answers:hover button {
+  color: aliceblue;
+}
+
+@media (min-width: 765px) {
+  .quiz-page-container {
+    max-width: 900px;
+    gap: 60px;
+    /* padding: 0; */
+  }
+
+  .quiz-page-container .title {
+    font-size: 2.7rem;
+  }
+
+  .quiz-page-container .questions-container {
+    gap: 30px;
+    justify-content: space-between;
+  }
+
+  .quiz-page-container .questions-container .question-container .question {
+    font-size: 1.5rem;
+  }
+
+  .quiz-page-container
+    .questions-container
+    .question-container
+    .options-container {
+    padding-left: 20px;
+  }
+
+  .quiz-page-container
+    .questions-container
+    .question-container
+    .options-container
+    .option {
+    font-size: 1.2rem;
+  }
+
+  .quiz-page-container
+    .questions-container
+    .question-container
+    .options-container
+    .option
+    label {
+    max-width: 700px;
+  }
+
+  .quiz-page-container .submit-answers {
+    margin-top: -20px;
+  }
+}
+
+@media (hover: none) {
+  .quiz-page-container
+    .questions-container
+    .question-container
+    .options-container
+    .option
+    input[type="radio"]:hover:after {
+    transform: scale(1);
+  }
+
+  .quiz-page-container .submit-answers:hover {
+    background-color: initial;
+
+    transition: all 0.2s ease;
+  }
+
+  .quiz-page-container .submit-answers:hover button {
+    color: var(--text-color);
+  }
+}

@@ -1,0 +1,60 @@
+.quiz-result-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 450px;
+  padding: 20px;
+  color: var(--text-color);
+  /* gap: 40px; */
+}
+
+.quiz-result-container .title {
+  font-size: 2.4rem;
+  font-weight: 500;
+}
+
+.quiz-result-container .proceed-buttons {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 40px;
+}
+
+.quiz-result-container .proceed-buttons .quiz-page,
+.quiz-result-container .proceed-buttons .home {
+  display: inline-block;
+  width: 49%;
+  padding: 10px 0;
+  border-radius: 6px;
+  border: 2px solid #323232;
+  cursor: pointer;
+  text-align: center;
+
+  transition: all 0.2s ease;
+}
+
+.quiz-result-container .proceed-buttons .quiz-page button,
+.quiz-result-container .proceed-buttons .home button {
+  border: none;
+  outline: none;
+  background-color: transparent;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.quiz-result-container .proceed-buttons .quiz-page:hover,
+.quiz-result-container .proceed-buttons .home:hover {
+  background-color: #323232;
+
+  transition: all 0.2s ease;
+}
+
+.quiz-result-container .proceed-buttons .quiz-page:hover button,
+.quiz-result-container .proceed-buttons .home:hover button {
+  color: aliceblue;
+
+  transition: all 0.2s ease;
+}

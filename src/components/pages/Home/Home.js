@@ -6,15 +6,15 @@ import "./Home.css";
 const Home = ({
   setQuestions,
   setQuizName,
-  setQuestionSubmit,
-  setQuizSubmitted,
+  setIsQuestionSubmitted,
+  setIsQuizSubmitted,
 }) => {
   useEffect(() => {
     setQuestions([]);
     setQuizName("");
-    setQuestionSubmit(false);
-    setQuizSubmitted(false);
-  }, [setQuestions, setQuizName, setQuestionSubmit, setQuizSubmitted]);
+    setIsQuestionSubmitted(false);
+    setIsQuizSubmitted(false);
+  }, [setQuestions, setQuizName, setIsQuestionSubmitted, setIsQuizSubmitted]);
 
   return (
     <div className="home-page-container">

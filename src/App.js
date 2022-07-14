@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Route, Routes, Outlet, Link, Navigate } from "react-router-dom";
+import { Route, Routes, Outlet, Navigate } from "react-router-dom";
 
 import "./App.css";
 
@@ -8,13 +8,15 @@ import Home from "./components/pages/Home/Home";
 import AddQuestions from "./components/pages/AddQuestions/AddQuestions";
 import QuizPage from "./components/pages/QuizPage/QuizPage";
 import QuizResult from "./components/pages/QuizResult/QuizResult";
-import Settings from "./components/pages/Settings/Settings";
+// import Settings from "./components/pages/Settings/Settings";
+import Error from "./components/Error/Error";
 
 const App = () => {
   const [questions, setQuestions] = useState([]);
   const [quizName, setQuizName] = useState("");
-  const [questionSubmit, setQuestionSubmit] = useState(false);
-  const [quizSubmitted, setQuizSubmitted] = useState(false);
+  const [isQuestionSubmitted, setIsQuestionSubmitted] = useState(false);
+  const [isQuizSubmitted, setIsQuizSubmitted] = useState(false);
+  const [score, setScore] = useState(0);
 
   return (
     <Routes>
@@ -35,8 +37,8 @@ const App = () => {
             <Home
               setQuestions={setQuestions}
               setQuizName={setQuizName}
-              setQuestionSubmit={setQuestionSubmit}
-              setQuizSubmitted={setQuizSubmitted}
+              setIsQuestionSubmitted={setIsQuestionSubmitted}
+              setIsQuizSubmitted={setIsQuizSubmitted}
             />
           }
         />
@@ -49,7 +51,7 @@ const App = () => {
               setQuestions={setQuestions}
               quizName={quizName}
               setQuizName={setQuizName}
-              setQuestionSubmit={setQuestionSubmit}
+              setIsQuestionSubmitted={setIsQuestionSubmitted}
             />
           }
         />
@@ -57,14 +59,15 @@ const App = () => {
         <Route
           path="/quiz+page"
           element={
-            questionSubmit ? (
+            isQuestionSubmitted ? (
               <QuizPage
                 quizName={quizName}
                 questions={questions}
-                setQuizSubmitted={setQuizSubmitted}
+                setIsQuizSubmitted={setIsQuizSubmitted}
+                setQuestions={setQuestions}
               />
             ) : (
-              <Navigate to="/" />
+              <Navigate to="*" />
             )
           }
         />
@@ -72,27 +75,21 @@ const App = () => {
         <Route
           path="/quiz+result"
           element={
-            quizSubmitted ? (
-              <QuizResult questions={questions} />
+            isQuizSubmitted ? (
+              <QuizResult
+                questions={questions}
+                score={score}
+                setScore={setScore}
+              />
             ) : (
-              <Navigate to="/" />
+              <Navigate to="*" />
             )
           }
         />
 
-        <Route path="/settings" element={<Settings />} />
+        <Route path="/settings" element={<Error />} />
 
-        <Route
-          path="*"
-          element={
-            <div className="error-container">
-              <h1 className="error">404 Not Found</h1>
-              <Link to="/" className="return-home">
-                Back to home
-              </Link>
-            </div>
-          }
-        />
+        <Route path="*" element={<Error />} />
       </Route>
     </Routes>
   );
