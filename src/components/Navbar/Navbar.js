@@ -8,7 +8,7 @@ const Navbar = () => {
 
   return (
     <div>
-      <nav className="navbar">
+      <nav className={`navbar ${mobileMenu ? "active" : ""}`}>
         <div className="title-container">
           <NavLink
             to="/"
@@ -17,12 +17,15 @@ const Navbar = () => {
           >
             Simply Quiz
           </NavLink>
+
           <div
-            className={`mobile-toggle${mobileMenu ? " active" : ""}`}
+            className={`mobile-toggle ${mobileMenu ? "active" : ""}`}
             onClick={() => setMobileMenu(mobileMenu ? false : true)}
           >
             <div className="line"></div>
+
             <div className="line"></div>
+
             <div className="line"></div>
           </div>
         </div>
@@ -39,6 +42,7 @@ const Navbar = () => {
               Home
             </NavLink>
           </li>
+
           <li
             className="nav-items"
             onClick={() => setMobileMenu(mobileMenu ? false : true)}
@@ -50,6 +54,7 @@ const Navbar = () => {
               Add Questions
             </NavLink>
           </li>
+
           <li
             className="nav-items"
             onClick={() => setMobileMenu(mobileMenu ? false : true)}
@@ -61,6 +66,7 @@ const Navbar = () => {
               Quiz Page
             </NavLink>
           </li>
+
           <li
             className="nav-items"
             onClick={() => setMobileMenu(mobileMenu ? false : true)}
@@ -72,6 +78,7 @@ const Navbar = () => {
               Quiz Result
             </NavLink>
           </li>
+
           <li
             className="nav-items"
             onClick={() => setMobileMenu(mobileMenu ? false : true)}

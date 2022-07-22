@@ -6,7 +6,7 @@
   width: 100%;
   max-width: 450px;
   padding: 20px;
-  color: var(--text-color);
+  color: var(--quiz-result-text-color);
 }
 
 .quiz-result-container .title {
@@ -28,7 +28,8 @@
   width: 49%;
   padding: 10px 0;
   border-radius: 6px;
-  border: 2px solid #323232;
+  background-color: var(--quiz-result-button-bg-color);
+  border: 2px solid var(--quiz-result-border-color);
   cursor: pointer;
   text-align: center;
 
@@ -40,20 +41,21 @@
   border: none;
   outline: none;
   background-color: transparent;
+  color: var(--quiz-result-text-color);
   font-size: 1.2rem;
   cursor: pointer;
 }
 
 .quiz-result-container .proceed-buttons .quiz-page:hover,
 .quiz-result-container .proceed-buttons .home:hover {
-  background-color: #323232;
+  background-color: var(--quiz-result-button-bg-hover-color);
 
   transition: all 0.2s ease;
 }
 
 .quiz-result-container .proceed-buttons .quiz-page:hover button,
 .quiz-result-container .proceed-buttons .home:hover button {
-  color: aliceblue;
+  color: var(--quiz-result-text-hover-color);
 
   transition: all 0.2s ease;
 }
@@ -61,14 +63,14 @@
 @media (hover: none) {
   .quiz-result-container .proceed-buttons .quiz-page:hover,
   .quiz-result-container .proceed-buttons .home:hover {
-    background-color: initial;
+    background-color: var(--quiz-result-button-bg-hover-color);
 
     transition: all 0.2s ease;
   }
 
   .quiz-result-container .proceed-buttons .quiz-page:hover button,
   .quiz-result-container .proceed-buttons .home:hover button {
-    color: unset;
+    color: var(--quiz-result-text-hover-color);
 
     transition: all 0.2s ease;
   }

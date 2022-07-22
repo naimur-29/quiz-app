@@ -57,7 +57,7 @@
 }
 
 .navbar .nav-container .nav-items .active {
-  color: lightgreen;
+  color: var(--nav-active-text-color);
 }
 
 @media (max-width: 1128px) {
@@ -108,7 +108,7 @@
   }
 
   .navbar .title-container .mobile-toggle .line {
-    background-color: #fff;
+    background-color: var(--nav-text-color);
     width: 30px;
     height: 4px;
 
@@ -145,6 +145,10 @@
     text-align: center;
   }
 
+  .navbar.active {
+    height: 40vh;
+  }
+
   .navbar .nav-container.active {
     height: 500%;
     transform: translateX(0);
@@ -153,7 +157,7 @@
 
 @media (max-width: 625px) {
   .navbar .nav-container .nav-items {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
   }
 }
 

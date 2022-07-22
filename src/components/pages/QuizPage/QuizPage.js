@@ -9,6 +9,7 @@ const QuizPage = ({ quizName, questions, setIsQuizSubmitted }) => {
   return (
     <div className="quiz-page-container">
       <h1 className="title">{quizName}</h1>
+
       <div className="questions-container">
         {questions.map((item, index) => (
           <div className="question-container" key={index}>

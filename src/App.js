@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Route, Routes, Outlet, Navigate } from "react-router-dom";
+import { Route, Routes, Outlet } from "react-router-dom";
 
 import "./App.css";
 
@@ -8,8 +8,8 @@ import Home from "./components/pages/Home/Home";
 import AddQuestions from "./components/pages/AddQuestions/AddQuestions";
 import QuizPage from "./components/pages/QuizPage/QuizPage";
 import QuizResult from "./components/pages/QuizResult/QuizResult";
-// import Settings from "./components/pages/Settings/Settings";
-import Error from "./components/Error/Error";
+import Settings from "./components/pages/Settings/Settings";
+import Error from "./components/pages/Error/Error";
 
 const App = () => {
   const [questions, setQuestions] = useState([]);
@@ -17,14 +17,18 @@ const App = () => {
   const [isQuestionSubmitted, setIsQuestionSubmitted] = useState(false);
   const [isQuizSubmitted, setIsQuizSubmitted] = useState(false);
   const [score, setScore] = useState(0);
+  const [settings, setSettings] = useState({
+    darkMode: false,
+  });
 
   return (
     <Routes>
       <Route
         path="/"
         element={
-          <div>
+          <div className={`${settings.darkMode ? "dark" : "light"}`}>
             <Navbar />
+
             <div className="page-container">
               <Outlet />
             </div>
@@ -67,7 +71,7 @@ const App = () => {
                 setQuestions={setQuestions}
               />
             ) : (
-              <Navigate to="*" />
+              <Error />
             )
           }
         />
@@ -82,12 +86,15 @@ const App = () => {
                 setScore={setScore}
               />
             ) : (
-              <Navigate to="*" />
+              <Error />
             )
           }
         />
 
-        <Route path="/settings" element={<Error />} />
+        <Route
+          path="/settings"
+          element={<Settings settings={settings} setSettings={setSettings} />}
+        />
 
         <Route path="*" element={<Error />} />
       </Route>

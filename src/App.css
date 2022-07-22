@@ -1,8 +1,10 @@
 .page-container {
   overflow-x: hidden;
-  min-height: 70vh;
+  min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--text-color);
+  background-color: var(--page-bg-color);
+
+  transition: background-color 1s ease;
 }
