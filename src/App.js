@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Route, Routes, Outlet } from "react-router-dom";
 
 import "./App.css";
@@ -20,6 +20,11 @@ const App = () => {
   const [settings, setSettings] = useState({
     darkMode: false,
   });
+
+  useEffect(() => {
+    const mq = window.matchMedia("(prefers-color-scheme: dark)");
+    mq.matches && setSettings((val) => Object.assign(val, { darkMode: true }));
+  }, []);
 
   return (
     <Routes>
