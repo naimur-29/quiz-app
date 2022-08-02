@@ -20,11 +20,9 @@ Dev Goal: Learn React Router Dom...
 
 ### Packages: <br/>
 1. Used React JS Framework. <br/>
-2. React Router for client site navigation.
-<br/>
-3. NPM as package manager
-4. Vanilla JavaScript Language.
-<br/>
+2. React Router for client site navigation. <br/>
+3. NPM as package manager. <br>
+4. Vanilla JavaScript Language. <br/>
 5. HTML & Vanilla CSS.
 
 ### Some features of my project: <br />
