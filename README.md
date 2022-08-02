@@ -23,9 +23,9 @@ Dev Goal: Learn React Router Dom...
 2.React Router for client site navigation.
 <br/>
 3.NPM as package manager
-3.Vanilla JavaScript Language.
+4.Vanilla JavaScript Language.
 <br/>
-4.HTML & Vanilla CSS.
+5.HTML & Vanilla CSS.
 
 ### Some features of my project: <br />
 1.This site is responsive for mobile and Desktop. <br />
