@@ -28,9 +28,9 @@ Dev Goal: Learn React Router Dom...
 5. HTML & Vanilla CSS.
 
 ### Some features of my project: <br />
-1.This site is responsive for mobile and Desktop. <br />
-2.It automatically switches to light or dark mode depending on your system preferences. <br />
-3.Have a settings section & have plans for adding backend.<br />
+1. This site is responsive for mobile and Desktop. <br />
+2. It automatically switches to light or dark mode depending on your system preferences. <br />
+3. Have a settings section & have plans for adding backend.<br />
 
 ---
 
