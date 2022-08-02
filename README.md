@@ -2,7 +2,7 @@
 
 ![Project Image](quiz-app.png)
 
-> This is Grocery House project .
+> This is my Online Quiz Aplication project. Just for fun!
 
 ---
 
