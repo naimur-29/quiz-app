@@ -1,6 +1,15 @@
 # [Quiz App](https://naimur29-quizapp.netlify.app/)
 
-![Project Image](quiz-app.png)
+<table>
+  <tr>
+    <td valign="top"><img src="readme-imgs/01.png"/></td>
+    <td valign="top"><img src="readme-imgs/02.png"/></td>
+  </tr>
+  <tr>
+    <td valign="top"><img src="readme-imgs/03.png"/></td>
+    <td valign="top"><img src="readme-imgs/04.png"/></td>
+  </tr>
+</table>
 
 > This is my Online Quiz Aplication project. Just for fun!
 
@@ -19,6 +28,7 @@ You can take fun quizes with your friends😁!! <br>
 Dev Goal: Learn React Router Dom...
 
 ### Packages: <br/>
+
 1.Used React JS Framework. <br/>
 2.React Router for client site navigation.
 <br/>
@@ -28,6 +38,7 @@ Dev Goal: Learn React Router Dom...
 4.HTML & Vanilla CSS.
 
 ### Some features of my project: <br />
+
 1.This site is responsive for mobile and Desktop. <br />
 2.It automatically switches to light or dark mode depending on your system preferences. <br />
 3.Have a settings section & have plans for adding backend.<br />
@@ -42,4 +53,5 @@ After download you open the project in your IDE and open your terminal. Then for
 ---
 
 ## Live link:
+
 - [Click to visit Quiz App](https://naimur29-quizapp.netlify.app/)
